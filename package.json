@@ -1,5 +1,5 @@
 {
-  "name": "Dynamic-List",
+  "name": "DynamicList",
   "version": "1.0.0",
   "description": "Dynamic list application using EJS and Express",
   "main": "app.js",
