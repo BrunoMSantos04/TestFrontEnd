@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .item-list {
+            list-style: none;
+            padding: 0;
+        }
+        .list-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <label for="quantity">Quantity: </label>
+            <input type="number" id="quantity" >
+        </div>
+        <ul id="itemList" class="item-list">
+            
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('quantity').addEventListener('input', function(e) {
+            const quantity = parseInt(this.value) || 0;
+            updateList(quantity);
+        });
+
+        function updateList(quantity) {
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = ''; 
+
+            for (let i = 1; i <= quantity; i++) {
+                const li = document.createElement('li');
+                li.className = 'list-item';
+                li.textContent = `${i}`;
+                itemList.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>    
